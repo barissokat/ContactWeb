@@ -320,7 +320,5 @@
   <Target Name="BeforeBuild">
   </Target>
   <Target Name="AfterBuild">
-    <AspNetCompiler Condition="'$(IsDesktopBuild)' != 'false'" VirtualPath="temp" PhysicalPath="$(ProjectDir)\..\$(ContactWeb)" />
-    <AspNetCompiler Condition="'$(IsDesktopBuild)' == 'false'" VirtualPath="temp" PhysicalPath="$(PublishDir)\_PublishedWebsites\$(ContactWeb)" />
   </Target> -->
 </Project>
