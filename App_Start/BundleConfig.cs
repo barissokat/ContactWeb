@@ -9,7 +9,7 @@ namespace ContactWeb
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/js/lib/jquery-min.js"));
+                        "~/js/lib/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/js/lib/bootstrap.min.js"));
@@ -17,17 +17,13 @@ namespace ContactWeb
             bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
                         "~/js/lib/jquery.dataTables.min.js",
                         "~/js/lib/dataTables.bootstrap.min.js",
-                        "~/js/lib/jquery.colReorder.min.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/js/bootstrap.js",
-                      "~/js/respond.js"));
+                        "~/js/lib/dataTables.colReorder.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/css/bootstrap.min.css",
                       "~/css/bootstrap-theme.min.css",
-                      "~/css/jquery.dataTables.css",
-                      "~/css/jquery.dataTable_themeroller.css",
+                      "~/css/jquery.dataTables.min.css",
+                      "~/css/jquery.dataTables_themeroller.css",
                       "~/css/dataTables.bootstrap.min.css",
                       "~/css/colReorder.bootstrap.min.css",
                       "~/css/site.css"));
