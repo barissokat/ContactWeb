@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ContactWeb.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ContactWeb.Controllers
 {
@@ -17,6 +18,21 @@ namespace ContactWeb.Controllers
         // GET: Contacts
         public ActionResult Index()
         {
+            try
+            {
+                var userId = new Guid(User.Identity.GetUserId());
+                var userName = User.Identity.GetUserName();
+
+                ViewBag.UserId = userId;
+                ViewBag.UserName = userName;
+
+                ViewData["UserId"] = userId;
+                ViewData["UserName"] = userName;
+            }
+            catch (System.Exception ex)
+            {
+
+            }
             return View(db.Contacts.ToList());
         }
 
