@@ -43,6 +43,7 @@ namespace ContactWeb.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            ViewBag.UserId = GetCurrentUserId();
             return View();
         }
 
@@ -61,6 +62,7 @@ namespace ContactWeb.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserId = GetCurrentUserId();
             return View(contact);
         }
 
