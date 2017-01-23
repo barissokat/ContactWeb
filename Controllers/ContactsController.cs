@@ -32,7 +32,7 @@ namespace ContactWeb.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null)
+            if (contact == null || !EnsureIsUserContact(contact))
             {
                 return HttpNotFound();
             }
@@ -112,7 +112,7 @@ namespace ContactWeb.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Contact contact = db.Contacts.Find(id);
-            if (contact == null)
+            if (contact == null || !EnsureIsUserContact(contact))
             {
                 return HttpNotFound();
             }
@@ -126,6 +126,10 @@ namespace ContactWeb.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Contact contact = db.Contacts.Find(id);
+            if (!EnsureIsUserContact(contact))
+            {
+                return HttpNotFound();
+            }
             db.Contacts.Remove(contact);
             db.SaveChanges();
             return RedirectToAction("Index");
