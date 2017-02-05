@@ -3,7 +3,7 @@ Bu proje Udemy üzerindeki Asp.Net MVC Quick Start uygulamaları kursunda yapıl
 
 #### Projenin url'si
 
-[http://contactweb35.apphb.com/]http://contactweb35.apphb.com/
+www.contactweb35.apphb.com
 
 ## Hata
 
